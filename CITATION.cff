@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Morgan
+    given-names: Jay
+    orcid: https://orcid.org/ 0000-0003-3719-362X
+title: jaypmorgan/chatlog-scrapper: archive-doi
+version: doi
+date-released: 2022-07-24

@@ -4,8 +4,6 @@ from typing import List
 
 import pandas as pd
 
-from progressbar import ProgressBar
-
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -91,13 +89,11 @@ if __name__ == '__main__':
     chatlogscrapper = ChatLogScraper()
     conversations = []
     links = chatlogscrapper.start()
-
-    pbar = ProgressBar(redirect_stdout=True, max_value=(len(links)))
+    
     try:
         for index, link in enumerate(links):
             print('getting', link)
             conversations += chatlogscrapper.scrape_page(link)
-            pbar.update(index)
     finally:
         conversations = pd.DataFrame(conversations)
         conversations.to_csv('output.csv', index=False)
